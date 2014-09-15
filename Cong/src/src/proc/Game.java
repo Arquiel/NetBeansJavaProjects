@@ -203,9 +203,15 @@ public class Game {
         else if (key == KeyEvent.VK_UP) {
             p2.setVelY(-5);
         }
+        else if (key == KeyEvent.VK_LEFT) {
+            p2.setVelX(-5);
+        }
+        else if (key == KeyEvent.VK_RIGHT) {
+            p2.setVelX(5);
+        }
         
         // Launch ball from player 2's side
-        else if ((key == KeyEvent.VK_LEFT) && (p2.getRole() == ATTACK) && !b.isBouncing()) {
+        else if ((key == KeyEvent.VK_SHIFT) && (p2.getRole() == ATTACK) && !b.isBouncing()) {
             b.setVelY(p2.getVelY());
             b.startBouncing();
             clock.start();
@@ -226,6 +232,12 @@ public class Game {
         } 
         else if (key == KeyEvent.VK_UP) {
             p2.setVelY(0);
+        }
+        else if (key == KeyEvent.VK_LEFT) {
+            p2.setVelX(0);
+        }
+        else if (key == KeyEvent.VK_RIGHT) {
+            p2.setVelX(0);
         }
     }
 }
